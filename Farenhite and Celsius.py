@@ -1,26 +1,41 @@
-F_or_C = input("Enter You Want eg:'F to C' or 'C to F' or 'C to K' or 'K to C': ")
+def fahrenheit_to_celsius(fahrenheit):
+    celsius = (fahrenheit - 32) * 5/9
+    return celsius
 
+def celsius_to_fahrenheit(celsius):
+    fahrenheit = (celsius * 9/5) + 32
+    return fahrenheit
 
+def celsius_to_kelvin(celsius):
+    kelvin = celsius + 273
+    return kelvin
 
-if F_or_C == "F to C":
-    F = float(input("Enter Farenhite Value: "))
-    C = (F-32)*5/9
-    print(C,"Celcius")
+def kelvin_to_celsius(kelvin):
+    celsius = kelvin - 273
+    return celsius
 
-elif F_or_C == "C to F":
-    C = float(input("Enter Celsius Value: "))
-    F = (9/5*C)+32
-    print(F,"Farenhite")
+def main():
+    F_or_C = input("Enter your conversion choice (e.g., 'F to C', 'C to F', 'C to K', 'K to C'): ")
 
-elif F_or_C == "C to K":
-    C = float(input("Enter Celcius Value: "))
-    K = C + 273
-    print(K, "Kelvin")
+    if F_or_C == "F to C":
+        F = float(input("Enter Fahrenheit Value: "))
+        C = fahrenheit_to_celsius(F)
+        print(C, "Celsius")
 
+    elif F_or_C == "C to F":
+        C = float(input("Enter Celsius Value: "))
+        F = celsius_to_fahrenheit(C)
+        print(F, "Fahrenheit")
 
-elif F_or_C == "K to C":
-    K = float(input("Enter Kelvin Value: "))
-    C = K - 273
-    print(C, "Celsius")
+    elif F_or_C == "C to K":
+        C = float(input("Enter Celsius Value: "))
+        K = celsius_to_kelvin(C)
+        print(K, "Kelvin")
 
-input()
+    elif F_or_C == "K to C":
+        K = float(input("Enter Kelvin Value: "))
+        C = kelvin_to_celsius(K)
+        print(C, "Celsius")
+
+if __name__ == "__main__":
+    main()
